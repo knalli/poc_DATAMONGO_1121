@@ -1,0 +1,15 @@
+<configuration debug="false" scan="true">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- date: same as iso but w/o the current day -->
+            <pattern>%date{HH:mm:ss.SSS} %-20([%thread]) %-5level %logger{32} - %msg %ex{full}%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="mongod" level="warn"></logger>
+    <logger name="org.springframework" level="warn"></logger>
+    <logger name="org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator" level="debug"></logger>
+    <root level="trace">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
